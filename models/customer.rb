@@ -54,6 +54,10 @@ class Customer
     end
   end
 
+  def film_count()
+    self.films.count()
+  end
+
 
 
 
