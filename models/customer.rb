@@ -45,6 +45,17 @@ class Customer
     return film_data.map { |film| Film.new(film) }
   end
 
+  def buy_a_ticket(film)
+    if @funds >= film.price
+      @funds -= film.price()
+      self.update(@name, @funds)
+      ticket = Ticket.new({ "customer_id" => @id, "film_id" => film.id })
+      ticket.save()
+    end
+  end
+  
+
+
 
 
 end
