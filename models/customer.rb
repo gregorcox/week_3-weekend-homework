@@ -48,12 +48,12 @@ class Customer
   def buy_a_ticket(film)
     if @funds >= film.price
       @funds -= film.price()
-      self.update(@name, @funds)
+      self.update()
       ticket = Ticket.new({ "customer_id" => @id, "film_id" => film.id })
       ticket.save()
     end
   end
-  
+
 
 
 
